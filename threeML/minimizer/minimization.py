@@ -1,3 +1,5 @@
+import logging
+
 import collections
 import math
 from builtins import object, range, str, zip
@@ -8,7 +10,7 @@ import scipy.optimize
 
 from threeML.config.config import threeML_config
 from threeML.exceptions.custom_exceptions import custom_warnings
-from threeML.io.logging import setup_logger
+
 from threeML.utils.differentiation import ParameterOnBoundary, get_hessian
 from threeML.utils.progress_bar import tqdm
 
@@ -16,7 +18,7 @@ from threeML.utils.progress_bar import tqdm
 
 custom_warnings.simplefilter("always", RuntimeWarning)
 
-log = setup_logger(__name__)
+log = logging.getLogger(__name__)
 
 # Special constants
 FIT_FAILED = 1e12
